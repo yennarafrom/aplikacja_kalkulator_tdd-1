@@ -29,5 +29,5 @@ def test_add__mixed_int_values(calculator):
 
 @pytest.mark.regression
 def test_add__mixed_float_values(calculator):
-    assert calculator.add(1.4, -3.1) == -1.7
+    assert round(calculator.add(1.4, -3.1), 1) == -1.7
     assert calculator.add(-2.5, 1.1) == -1.4
