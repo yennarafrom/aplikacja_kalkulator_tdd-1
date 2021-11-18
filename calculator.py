@@ -22,4 +22,7 @@ class Calculator:
 
     def div(self, x, y):
         self.validate_args(x, y)
-        return x/y
+        if y != 0:
+            return x/y
+        else:
+            raise ValueError
