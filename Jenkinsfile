@@ -1,6 +1,15 @@
 pipeline {
     agent any
+    parameters {
+    gitParameter branchFilter: '.*', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
+    }
+
     stages {
+    stage('Example') {
+      steps {
+        git branch: "${params.BRANCH}", url: 'https://github.com/yennarafrom/aplikacja_kalkulator_tdd-1.git'
+      }
+    }   
         stage('Checkout') {
             steps {
                 script {
