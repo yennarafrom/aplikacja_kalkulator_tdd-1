@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    parameters {
+    gitParameter branchFilter: '.*', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    }
+
     stages {
         stage('Checkout') {
             steps {
